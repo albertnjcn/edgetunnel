@@ -6,3 +6,15 @@ keep_vars = true
 #[[kv_namespaces]]
 #binding = "KV"			#KV绑定名默认不可修改
 #id = ""				#KV数据库id
+
+# ===== Fork 新增可选变量（在 Dashboard → Settings → Variables 设置即可，均可不设）=====
+# CONNECT_TIMEOUT = "1000"	# 单路 TCP 拨号超时（毫秒），高延迟链路可调到 2000-3000；默认 1000
+#
+# ===== 下载大流量断流的资源上限（重要）=====
+# 付费版(Workers Paid)建议解除 CPU 上限，默认 30s 可提到 5 分钟（免费版无此配置项，固定 10ms CPU）：
+#[limits]
+#cpu_ms = 300000
+#
+# 建议同时（面板操作，与本文件无关）：
+# - 给 Worker 绑定自定义域名并关闭 workers.dev（workers.dev 在部分地区易被干扰）
+# - 不要开启 Smart Placement / Under Attack 模式（会把实例搬离客户端或插入挑战页，代理场景有害）
